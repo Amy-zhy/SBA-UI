@@ -1,16 +1,17 @@
 pipeline {
-  agent none
+  // agent none
+  agent any
   // environment {
   //   DOCKERHUBNAME = "zhanghongyu423"
   // }
   stages {
     stage('Build') {
-      agent {
-        docker {
-          image 'node' 
-          args '-p 3000:3000'
-        }
-      }
+      // agent {
+      //   docker {
+      //     image 'node' 
+      //     args '-p 3000:3000'
+      //   }
+      // }
       steps {
         echo 'start npm install...'
         bat 'npm install'
@@ -21,7 +22,7 @@ pipeline {
     }
 
     stage('docker build & push & run') {
-      agent any
+      // agent any
       steps {
         script {
           def REMOVE_FLAG = bat(returnStdout: true, script: "docker image ls -q *%REMOVE_FLAG%/sbaamyui*") != ""
@@ -42,7 +43,7 @@ pipeline {
     }
 
     stage('clean workspace') {
-      agent any
+      // agent any
       steps {
         cleanWs()
       }
