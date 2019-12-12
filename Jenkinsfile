@@ -15,7 +15,6 @@ pipeline {
     }
 
     stage('docker build & push & run') {
-      // agent any
       steps {
         withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           echo '%USERNAME%'
