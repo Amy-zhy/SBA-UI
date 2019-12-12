@@ -32,9 +32,9 @@ pipeline {
           echo 'docker running successfully!'
         }  
       }
-    }
-
-    post {
+    }  
+  }
+post {
     always {
       echo 'build and deploy finished'
     }
@@ -46,7 +46,6 @@ pipeline {
     success {
       echo 'deploy successfully'
     }
-  }
   }
 }
 
