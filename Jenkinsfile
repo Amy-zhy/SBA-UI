@@ -1,8 +1,8 @@
 pipeline {
   agent none
-  environment {
-    DOCKERHUBNAME = "zhanghongyu423"
-  }
+  // environment {
+  //   DOCKERHUBNAME = "zhanghongyu423"
+  // }
   stages {
     stage('Build') {
       agent {
@@ -27,16 +27,16 @@ pipeline {
           def REMOVE_FLAG = bat(returnStdout: true, script: "docker image ls -q *%REMOVE_FLAG%/sbaamyui*") != ""
           echo "REMOVE_FLAG: %REMOVE_FLAG%"
           if(REMOVE_FLAG){
-            bat 'docker image rm -f $(docker image ls -q *%DOCKERHUBNAME%/sbaamyui*)'
+            bat 'docker image rm -f $(docker image ls -q *zhanghongyu423/sbaamyui*)'
           }
         }
         withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           echo '$USERNAME + %USERNAME%'
           echo '$PASSWORD + %PASSWORD%'
           bat 'docker login -u %USERNAME% -p %PASSWORD%'
-          bat 'docker image build -t %DOCKERHUBNAME%/sbaamyui .'
-          bat 'docker push %DOCKERHUBNAME%/sbaamyui'
-          bat 'docker run -d -p 4200:80 --name sbaamyui %DOCKERHUBNAME%/sbaamyui'
+          bat 'docker image build -t zhanghongyu423/sbaamyui .'
+          bat 'docker push zhanghongyu423/sbaamyui'
+          bat 'docker run -d -p 4200:80 --name sbaamyui zhanghongyu423/sbaamyui'
         }  
       }
     }
