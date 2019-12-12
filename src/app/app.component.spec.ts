@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'auvtion'`, () => {
+  it(`should have as title 'SBA-UI'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('auvtion');
+    expect(app.title).toEqual('SBA-UI');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('auvtion app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('SBA-UI app is running!');
   });
 });
