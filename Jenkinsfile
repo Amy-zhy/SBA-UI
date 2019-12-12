@@ -1,17 +1,10 @@
 pipeline {
-  // agent none
   agent any
-  // environment {
-  //   DOCKERHUBNAME = "zhanghongyu423"
-  // }
+  environment {
+    DOCKERHUBNAME = "zhanghongyu423"
+  }
   stages {
     stage('Build') {
-      // agent {
-      //   docker {
-      //     image 'node' 
-      //     args '-p 3000:3000'
-      //   }
-      // }
       steps {
         echo 'start npm install...'
         bat 'npm install'
@@ -24,30 +17,36 @@ pipeline {
     stage('docker build & push & run') {
       // agent any
       steps {
-        // script {
-        //   def REMOVE_FLAG = bat(returnStdout: true, script: "docker image ls -q *%REMOVE_FLAG%/sbaamyui*") != ""
-        //   echo "REMOVE_FLAG: '%REMOVE_FLAG%'"
-        //   if(REMOVE_FLAG){
-        //     bat 'docker image rm -f $(docker image ls -q *zhanghongyu423/sbaamyui*)'
-        //   }
-        // }
         withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-          echo '$USERNAME + %USERNAME%'
-          echo '$PASSWORD + %PASSWORD%'
+          echo '%USERNAME%'
+          echo '%PASSWORD%'
           bat 'docker login -u %USERNAME% -p %PASSWORD%'
-          bat 'docker image build -t zhanghongyu423/sbaamyui .'
-          bat 'docker push zhanghongyu423/sbaamyui'
-          bat 'docker run -d -p 4200:80 --name sbaamyui zhanghongyu423/sbaamyui'
+          echo 'Start building image...'
+          bat 'docker image build -t %DOCKERHUBNAME%/sbaamyui .'
+          echo 'Image build successfully!'
+          echo 'Start pushing image to docker hub...'
+          bat 'docker push %DOCKERHUBNAME%/sbaamyui'
+          echo 'Image push successfully!'
+          echo 'Start running...'
+          bat 'docker run -d -p 4200:80 --name sbaamyui %DOCKERHUBNAME%/sbaamyui'
+          echo 'docker running successfully!'
         }  
       }
     }
 
-    stage('clean workspace') {
-      // agent any
-      steps {
-        cleanWs()
-      }
+    post {
+    always {
+      echo 'build and deploy finished'
     }
+
+    failure {
+      echo 'build failed'
+    }
+
+    success {
+      echo 'deploy successfully'
+    }
+  }
   }
 }
 
