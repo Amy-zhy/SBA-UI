@@ -18,12 +18,12 @@ export class ImportExcelComponent implements OnInit {
   public toDate: string;
   public res: any;
 
-  readonly uploadURL = LocalURL.serverURL + 'importfile/admin/import/data';
+  readonly uploadURL = LocalURL.serverURL + 'uploadexcel/admin/import/data';
 
   uploader: FileUploader = new FileUploader({
     // url: 'http://9.112.77.89:8080/import/data',
     // url: 'http://localhost:8084/admin/import/data',
-    // Authorization: 'Shazi ' + localStorage.getItem('JWT-Token')
+    // Authorization: 'Amy ' + localStorage.getItem('JWT-Token')
     url: this.uploadURL,
     method: 'POST',
     itemAlias: 'file',
@@ -31,7 +31,7 @@ export class ImportExcelComponent implements OnInit {
     removeAfterUpload: true,
     allowedFileType: ['xlsx', 'xls'],
     headers: [
-      {name: 'Authorization', value: `Shazi ${localStorage.getItem('JWT-Token')}`}
+      {name: 'Authorization', value: `Amy ${localStorage.getItem('JWT-Token')}`}
 
     ]
   });

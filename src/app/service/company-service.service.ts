@@ -14,12 +14,12 @@ import { MessageService } from './message.service';
 })
 export class CompanyServiceService {
   // readonly allcompaniesUrl = 'http://9.112.80.151:8081/search/company';
-  readonly allcompaniesUrl = LocalURL.serverURL + 'searchsector/search/company';
+  readonly allcompaniesUrl = LocalURL.serverURL + 'search/search/company';
   // readonly companyUrl = 'http://9.112.80.151:8082/company';
   readonly companyUrl = LocalURL.serverURL + 'companyipo/admin/manage/company';
-  // readonly updatecompanyUrl = 'http://localhost:8088/company';
+  // readonly updatecompanyUrl = 'http://localhost:9990/company';
   // readonly currentcompanyUrl = 'http://9.112.80.151:8081/search/company_id';
-  readonly currentcompanyUrl = LocalURL.serverURL + 'searchsector/search/company_id';
+  readonly currentcompanyUrl = LocalURL.serverURL + 'search/search/company_id';
 
   constructor(
     private http: HttpClient,

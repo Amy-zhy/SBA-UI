@@ -12,7 +12,7 @@ import { LocalURL } from '../../config/global-config';
 export class ManageIpoService {
 
   // readonly allIposUrl = 'http://localhost:8082/search/ipo';
-  readonly allIposUrl = LocalURL.serverURL + 'searchsector/search/ipo';
+  readonly allIposUrl = LocalURL.serverURL + 'search/search/ipo';
 
   // readonly updateipoUrl = 'http://localhost:8081/ipo';
   readonly updateipoUrl = LocalURL.serverURL + 'companyipo/admin/manage/ipo';

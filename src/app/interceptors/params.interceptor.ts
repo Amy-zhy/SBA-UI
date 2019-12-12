@@ -15,7 +15,7 @@ export class ParamInterceptor implements HttpInterceptor {
     const modifiedReq = req.clone({
       setHeaders: {
         // token: token.toString()
-        Authorization: 'Shazi ' + localStorage.getItem('JWT-Token')
+        Authorization: 'Amy ' + localStorage.getItem('JWT-Token')
       }
     });
     return next.handle(modifiedReq);

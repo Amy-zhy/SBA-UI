@@ -20,7 +20,7 @@ export class SignupService {
         public headerService: HeaderService
     ) { }
 
-    readonly signupURL = LocalURL.serverURL + 'securityuser/signup';
+    readonly signupURL = LocalURL.serverURL + 'user/signup';
 
     public addUser(signupForm: Signup): Observable<any> {
         console.log('addUser() done!');

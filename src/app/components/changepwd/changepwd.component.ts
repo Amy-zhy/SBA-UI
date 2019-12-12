@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient,HttpHeaders  } from '@angular/common/http';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Router } from '@angular/router'; // 路由传参用到
 import { LocalURL } from '../../config/global-config';
 
 
-const BSEURL = LocalURL.serverURL + 'securityuser';
+const BSEURL = LocalURL.serverURL + 'user';
 
 @Component({
   selector: 'app-changepwd',
@@ -15,16 +15,15 @@ export class ChangepwdComponent implements OnInit {
 
   oldpwd: string;
   newpwd: string;
-  jsonData: Object;
+  jsonData: object;
   confirm_newpwd: string;
-  constructor(private http: HttpClient,  private router: Router) { 
-    
+  constructor(private http: HttpClient,  private router: Router) {
   }
 
   submitChangePwdRequest(){
-    console.log("token: ", "shazi "+ localStorage.getItem('JWT-Token'));
+    console.log("token: ", "amy "+ localStorage.getItem('JWT-Token'));
     console.log("username",localStorage.getItem('currUserName'));
-    let headers = { headers: new HttpHeaders({ "Authorization": "shazi "+ localStorage.getItem('JWT-Token')})}
+    let headers = { headers: new HttpHeaders({ "Authorization": "amy "+ localStorage.getItem('JWT-Token')})}
     this.http.post(BSEURL + "/settings" 
       ,{"username":localStorage.getItem('currUserName'),"password":this.oldpwd,"newpassword":this.newpwd},
         headers )
