@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CompanyServiceService } from '../../service/company-service.service';
-import { Company } from '../../config/company';
-import { IpoDetails } from '../../config/company';
-import { CompanyIPO } from '../../config/company';
+import { CompanyServiceService } from './company-service.service';
+import { Company } from './company';
+import { IpoDetails } from './company';
+import { CompanyIPO } from './company';
 
 declare let laydate;
 @Component({
@@ -17,7 +17,7 @@ export class ManageCompaniesComponent implements OnInit {
   companyipo = new CompanyIPO();
   companyForm = new Company();
   ipodetails = new IpoDetails();
-  public search:any = '';
+  public search: any = '';
   constructor(private companyservice: CompanyServiceService ) { }
 
   ngOnInit() {

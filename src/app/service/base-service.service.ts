@@ -22,17 +22,16 @@ adminMenus: TopMenu[] = [
   { title: 'Manage Company', link: 'manageCompanies', id: 2 },
   { title: 'Manage Exchange', link: 'manageExchanges', id: 3 } ,
   { title: 'Update IPO details', link: 'manageIPO', id: 4 },
-  { title: 'Change Password', link: 'changepwd', id: 9 },
-  { title: 'Logout', link: 'logout', id: 10 }
+  { title: 'Change Password', link: 'changepwd', id: 5 },
+  { title: 'Logout', link: 'logout', id: 6 }
 ];
 
 userMenus: TopMenu[] = [
-  { title: 'IPOs', link: 'IPOs', id: 5 },
-  { title: 'Compare Company', link: 'compareCompany', id: 6 },
-  // { title: 'Compare Sectors', link: 'compareSectors', id: 7 },
-  // { title: 'other', link: 'other', id: 8 }
-  { title: 'Change Password', link: 'changepwd', id: 7 },
-  { title: 'Logout', link: 'logout', id: 8 }
+  { title: 'IPOs', link: 'IPOs', id: 7 },
+  { title: 'Compare Company', link: 'compareCompany', id: 8 },
+  { title: 'Compare Sectors', link: 'compareSectors', id: 9 },
+  { title: 'Change Password', link: 'changepwd', id: 10 },
+  { title: 'Logout', link: 'logout', id: 11 }
 ];
 
 getTabs() {
