@@ -35,7 +35,6 @@ userMenus: TopMenu[] = [
   { title: 'Logout', link: 'logout', id: 8 }
 ];
 
-//  neo start
 getTabs() {
   const role=localStorage.getItem('currUserRole')
   if (role === 'ROLE_admin') {
@@ -55,6 +54,5 @@ setCurrentUser(authres: Authresponse) {
 getSomeData() {
   return this.http.get('http://localhost:8089/smc/secure/authenticated');
 }
-//  neo end
 
 }
