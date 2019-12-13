@@ -12,4 +12,3 @@ export * from './manage-exchanges';
 export * from './manage-ipo';
 export * from './user-ipo';
 export * from './home-detail';
-export * from './other';

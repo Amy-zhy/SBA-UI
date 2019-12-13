@@ -20,7 +20,6 @@ import {
   ChangepwdComponent,
   LogoutComponent,
   HomeDetailComponent,
-  OtherComponent
 } from './components';
 
 import { FormsModule } from '@angular/forms';
@@ -61,7 +60,6 @@ import { SearchPipe } from './search.pipe';
     ChangepwdComponent,
     LogoutComponent,
     HomeDetailComponent,
-    OtherComponent,
     SearchPipe
   ],
 

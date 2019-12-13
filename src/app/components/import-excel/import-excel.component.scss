@@ -19,7 +19,7 @@
   padding: 0 16px;
   max-width: 960px;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
 }
 .btn-add {
   margin-left: 74%; 
@@ -39,6 +39,10 @@
 
 .modal-dialog {
   pointer-events: auto;
+}
+
+.text-position {
+  align-content: center;
 }
 
 

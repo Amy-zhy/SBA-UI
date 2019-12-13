@@ -28,7 +28,7 @@ export class ScrollableTabComponent implements OnInit,OnChanges {
   selectedIndex:Number=0
   @Input() menus:TopMenu[]=[]
   @Input() bColor='#fff'
-  @Input() titleActiveColor='yellow'
+  @Input() titleActiveColor='blue'
   @Input() titleColor='blue'
   @Input() indicatorColor='brown'
   @Output() tabSelected=new EventEmitter()

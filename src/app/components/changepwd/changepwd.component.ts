@@ -23,9 +23,14 @@ export class ChangepwdComponent implements OnInit {
   submitChangePwdRequest(){
     console.log("token: ", "amy "+ localStorage.getItem('JWT-Token'));
     console.log("username",localStorage.getItem('currUserName'));
+    console.log('old pw', this.oldpwd);
+    console.log('new pw', this.newpwd);
+    console.log('confirm_newpwd', this.confirm_newpwd);
+
+
     let headers = { headers: new HttpHeaders({ "Authorization": "amy "+ localStorage.getItem('JWT-Token')})}
     this.http.post(BSEURL + "/settings" 
-      ,{"username":localStorage.getItem('currUserName'),"password":this.oldpwd,"newpassword":this.newpwd},
+      ,{"username":localStorage.getItem('currUserName'),"password": this.oldpwd,"newpassword": this.newpwd},
         headers )
       .subscribe(res=>{
         this.getFirstData(res)});

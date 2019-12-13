@@ -1,13 +1,17 @@
 ul{
   margin: 0;
-  padding: 0;
+  // padding: 0;
   display: flex;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   // flex-direction: row;
   justify-content: space-between;
+  height:35px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
 }
 ul li {
+  // margin-top: 25%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -26,7 +30,7 @@ a{
 }
 
 .active{
-  color: red;
+  color: black;
 }
 
 .first{
