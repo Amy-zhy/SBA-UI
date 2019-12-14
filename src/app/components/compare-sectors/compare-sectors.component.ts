@@ -4,7 +4,7 @@ import { HttpClient  } from '@angular/common/http';
 import { LocalURL } from '../../config/global-config';
 
 
-const BSEURL = LocalURL.serverURL + 'searchsector';
+const BSEURL = LocalURL.serverURL + 'search';
 // const BSEURL = "http://localhost:8081"
 const SECONDARYURL_SECTOR = "/search/comparison/sector/";
 
